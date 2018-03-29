@@ -1,3 +1,41 @@
+git config --global user.name "Hongson"
+git config --global user.email "all17lai@sina.com"
+
+再次强调，如果使用了 --global 选项，那么该命令只需要运行一次，因为之后无论你在该系统上做任何事
+情， Git 都会使用那些信息。当你想针对特定项目使用不同的用户名称与邮件地址时，可以在那个项目目录下运
+行没有 --global 选项的命令来配置。
+
+Git 当时能找到的配置
+git config --list
+
+$ git config user.name
+Hongson
+
+
+$ git help <verb>
+$ git <verb> --help
+$ man git-<verb>
+例如，要想获得 config 命令的手册，执行
+$ git help config
+
+三种状态
+已提交（committed）、已修改（modified）和已暂存（staged）
+
+在现有目录中初始化仓库
+$ git init
+
+跟踪指定文件
+$ git add file_name
+提交文件
+$ git commit -m 'initial project version'
+
+克隆现有的仓库
+$ git clone
+
+克隆仓库的命令格式是 git clone [url] 。比如，要克隆 Git 的可链接库 libgit2
+$ git clone https://github.com/libgit2/libgit2
+
+
 检查当前文件状态
 $ git status
 
@@ -32,4 +70,9 @@ $ cat .gitignore
 . 匹配模式可以以（/）开头防止递归。
 . 匹配模式可以以（/）结尾指定目录。
 . 要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。
+
+要查看尚未暂存的文件更新了哪些部分
+$ git diff
+
+若要查看已暂存的将要添加到下次提交里的内容，可以用 git diff --staged 命令。
 
