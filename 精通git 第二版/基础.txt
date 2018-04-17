@@ -118,4 +118,34 @@ Table 1. git log --pretty=format 常用的选项
 %cr	提交日期，按多久以前的方式显示
 %s	提交说明
 
+-p		按补丁格式显示每个更新之间的差异。
+--stat		显示每次更新的文件修改统计信息。
+--shortstat	只显示 --stat 中最后的行数修改添加移除统计。
+--name-only	仅在提交信息后显示已修改的文件清单。
+--name-status	显示新增、修改、删除的文件清单。
+--abbrev-commit	仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。
+--relative-date	使用较短的相对时间显示（比如，“2 weeks ago”）。
+--graph		显示 ASCII 图形表示的分支合并历史。
+--pretty	使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和
+format（后跟指定格式）。
 
+-(n)			仅显示最近的 n 条提交
+--since, --after 	仅显示指定时间之后的提交。
+--until, --before 	仅显示指定时间之前的提交。
+--author		仅显示指定作者相关的提交。
+--committer		仅显示指定提交者相关的提交。
+--grep			仅显示含指定关键字的提交
+-S			仅显示添加或移除了某个关键字的提交
+
+如果要查看 Git 仓库中，2008 年 10 月期间，Junio Hamano 提交的但未合并的测试文
+件，可以用下面的查询命令:
+$ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \
+???--before="2008-11-01" --no-merges -- t/
+
+撤消操作
+$ git commit --amend
+例如，你提交后发现忘记了暂存某些需要的修改，可以像下面这样操作：
+$ git add forgotten_file
+$ git commit --amend
+
+取消暂存的文件
