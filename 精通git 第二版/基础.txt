@@ -149,3 +149,39 @@ $ git add forgotten_file
 $ git commit --amend
 
 取消暂存的文件
+git checkout -- [file]
+
+				查看远程仓库
+$ git remote
+添加远程仓库
+git remote add <shortname> <url>
+
+从远程仓库中抓取与拉取
+$ git fetch [remote-name]
+
+推送到远程仓库
+$ git push origin master
+
+查看远程仓库
+$ git remote show origin
+
+远程仓库的移除与重命名
+例如，想要将 pb重命名为 paul，可以用 git remote rename 这样做
+$ git remote rename pb paul
+$ git remote
+移除远程仓库paul
+$ git remote rm paul
+$ git remote
+
+打标签:列出标签
+$ git tag
+
+你也可以使用特定的模式查找标签。例如，Git 自身的源代码仓库包含标签的数量超过 500 个。如果只对 1.8.5系列感兴趣，可以运行：
+$ git tag -l 'v1.8.5*'
+v1.8.5
+v1.8.5-rc0
+v1.8.5-rc1
+v1.8.5-rc2
+
+创建标签
+
