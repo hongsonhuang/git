@@ -183,5 +183,22 @@ v1.8.5-rc0
 v1.8.5-rc1
 v1.8.5-rc2
 
-创建标签
+创建标签:轻量标签（lightweight）与附注标签（annotated）
+$ git tag -a v1.4 -m 'my version 1.4'
+$ git tag
+v0.1
+v1.3
+v1.4
 
+轻量标签
+$ git tag tag_name
+
+后期打标签
+$ git tag -a tag_name 校验码
+
+共享标签：默认情况下，git push 命令并不会传送标签到远程仓库服务器上。在创建完标签后你必须显式地推送标签到共享服务器上。
+$ git push origin tag_name
+如果想要一次性推送很多标签 --tags
+$ git push origin --tags
+
+检出标签
